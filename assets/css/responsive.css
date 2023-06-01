@@ -1,0 +1,76 @@
+@media screen and (min-width: 375px) {
+    .pokemons{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .fixed-header {
+        height: 70px;
+    }
+    
+    .div_header {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+    }
+
+    .div_header .div_titulo_logo {
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .icon_pokebola{
+        margin-left: 10px;
+    }
+
+    .div_header > .div_input_pesquisa {
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .searchInput {
+        margin-top: 0; 
+    }
+    
+    .content{
+        margin-top: 80px !important; 
+        padding: 0 20px;
+    }      
+
+    .pokemons{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .div_progress progress {
+        margin-left: 48px !important ;
+    }
+    
+}
+
+@media screen and (min-width: 992px) {
+    .pokemons{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .pokemons{
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 2560px) {
+    .pokemons{
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+}
