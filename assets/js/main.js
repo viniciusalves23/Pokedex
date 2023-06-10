@@ -1,6 +1,6 @@
 const pokemonList = document.getElementById('pokemonList');
 const pokemonCard = document.getElementById('pokemon-card');
-const limit = 151;
+const limit = 500;
 let offset = 0;
 
 function convertPokemonToLi(pokemon) {
@@ -158,8 +158,32 @@ function convertPokemonToLi(pokemon) {
     `
 }
 
-pokeApi.getPokemons(offset, limit).then((pokemons = []) => {
-    allPokemons = pokemons; // Armazena todos os pokemons originais
-    const newHtml = pokemons.map(convertPokemonToLi).join('')
-    pokemonList.innerHTML += newHtml
-})
+function showLoadingIcon() {
+  const loadingIcon = document.getElementById('loadingIcon');
+  const pokemonList = document.getElementById('pokemonList');
+
+  loadingIcon.style.display = '';
+  pokemonList.style.display = 'none';
+}
+
+function hideLoadingIcon() {
+  const loadingIcon = document.getElementById('loadingIcon');
+  const pokemonList = document.getElementById('pokemonList');
+
+  loadingIcon.style.display = 'none';
+  pokemonList.style.display = '';
+}
+
+pokeApi.getPokemons(offset, limit)
+  .then((pokemons = []) => {
+    allPokemons = pokemons;
+    const newHtml = pokemons.map(convertPokemonToLi).join('');
+    pokemonList.innerHTML += newHtml;
+    hideLoadingIcon();
+  })
+  .catch((error) => {
+    console.error(error);
+    hideLoadingIcon();
+  }); 
+
+

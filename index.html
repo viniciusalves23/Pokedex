@@ -38,17 +38,21 @@
                 <input class="searchInput" type="search" id="searchInput" placeholder="Digite o nome do Pokémon">
             </div>
         </div>
-     
     </header>
 
     <section class="content">
+      
         <button id="backToTopBtn" class="back-to-top-btn" onclick="scrollToTop()">&#8593; Voltar ao Topo</button>
+        
+        <div id="loadingIcon" class="loading-icon">
+            <div class="loading-spinner"></div>
+            <p class="p-loading">Carregando pokemons...</p>
+        </div>
 
         <ol id="pokemonList" class="pokemons">
         </ol>
 
     </section>
-    
     <!-- JS -->
     <script src="/assets/js/script.js"></script>
     <script src="/assets/js/pokemon-model.js"></script>
@@ -60,6 +64,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Importação dos arquivos JavaScript do Bootstrap -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
 </body>
 
 </html>
