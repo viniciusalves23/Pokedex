@@ -1,6 +1,6 @@
 const pokemonList = document.getElementById('pokemonList');
 const pokemonCard = document.getElementById('pokemon-card');
-const limit = 500;
+const limit = 151;
 let offset = 0;
 
 function convertPokemonToLi(pokemon) {
